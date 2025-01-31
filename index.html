@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 95 Connect</title>
+    <style>
+        body {
+            background-color: #008080;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Comic Sans MS', sans-serif;
+        }
+        .window {
+            background: #c0c0c0;
+            border: 3px solid #808080;
+            box-shadow: inset -2px -2px 0px #fff, inset 2px 2px 0px #404040;
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+        }
+        .title-bar {
+            background: #000080;
+            color: white;
+            padding: 5px;
+            font-weight: bold;
+            text-align: left;
+        }
+        .connect-button {
+            margin-top: 20px;
+            background: #c0c0c0;
+            border: 2px solid #808080;
+            box-shadow: inset -2px -2px 0px #fff, inset 2px 2px 0px #404040;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .connect-button:active {
+            box-shadow: inset 2px 2px 0px #fff, inset -2px -2px 0px #404040;
+        }
+    </style>
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">Connect</div>
+        <button class="connect-button" onclick="window.location.href='https://www.google.com';">CONNECT</button>
+    </div>
+</body>
+</html>
