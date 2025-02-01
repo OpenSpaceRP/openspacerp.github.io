@@ -21,6 +21,7 @@
             text-align: center;
             cursor: pointer;
             user-select: none;
+            cursor: grab;
         }
 
         .folder img {
@@ -120,12 +121,12 @@
             background-color: #c0c0c0;
             border: 2px solid #000;
             box-shadow: 2px 2px 0px #fff, 2px 2px 0px 2px #000;
-            cursor: pointer;
+
         }
 
         .taskbar-item img {
-            width: 200px; /* Triple the width (96 * 3 = 288) */
-            height: 48px; /* Half the height (96 / 2 = 48) */
+            width: 100px; 
+            height: 24px; 
         }
 
         .taskbar-item:hover {
@@ -197,6 +198,11 @@
         <!-- Twitch Button -->
         <a href="https://www.google.com" class="taskbar-item">
             <img src="icons/Twitch_logo.svg" alt="Twitch Icon">
+        </a>
+
+        <!-- FiveM Button -->
+        <a href="fivem://" class="taskbar-item">
+            <img src="icons/FiveM-Logo.png" alt="FiveM Icon">
         </a>
 
         <!-- Digital Clock -->
