@@ -3,57 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open Space RP</title>
+    <title>Windows 95 Desktop</title>
     <style>
         body {
             background-color: #008080; /* Windows 95 teal background */
             font-family: 'MS Sans Serif', Geneva, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             height: 100vh;
+            overflow: hidden;
             position: relative;
         }
 
-        .window {
-            background-color: #c0c0c0; /* Windows 95 gray */
-            border: 2px solid #000;
-            box-shadow: 3px 3px 0px #fff, 3px 3px 0px 2px #000;
-            padding: 8px;
-            width: 300px;
+        .folder {
+            position: absolute;
+            width: 64px;
+            text-align: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .folder img {
+            width: 48px;
+            height: 48px;
+        }
+
+        .folder span {
+            display: block;
+            margin-top: 4px;
+            font-size: 12px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 2px;
+        }
+
+        .recycle-bin {
+            position: absolute;
+            bottom: 90px; /* Above the taskbar */
+            right: 20px;
+            width: 64px;
             text-align: center;
         }
 
-        .title-bar {
-            background-color: #000080; /* Windows 95 blue */
+        .recycle-bin img {
+            width: 48px;
+            height: 48px;
+        }
+
+        .recycle-bin span {
+            display: block;
+            margin-top: 4px;
+            font-size: 12px;
             color: #fff;
-            padding: 4px;
-            font-size: 14px;
-            font-weight: bold;
-            text-align: left;
-        }
-
-        .content {
-            padding: 20px;
-        }
-
-        .connect-button {
-            background-color: #c0c0c0;
-            border: 2px solid #000;
-            box-shadow: 2px 2px 0px #fff, 2px 2px 0px 2px #000;
-            padding: 10px 20px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #000;
-            text-decoration: none;
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .connect-button:hover {
-            background-color: #a0a0a0;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 2px;
         }
 
         .taskbar {
@@ -121,21 +124,55 @@
         }
 
         .taskbar-item img {
-            width: 200px; 
-            height: 48px; 
+            width: 200px; /* Triple the width (96 * 3 = 288) */
+            height: 48px; /* Half the height (96 / 2 = 48) */
         }
 
         .taskbar-item:hover {
             background-color: #a0a0a0;
         }
+
+        .clock {
+            position: absolute;
+            right: 8px;
+            bottom: 16px;
+            background-color: #c0c0c0;
+            border: 2px solid #000;
+            box-shadow: 2px 2px 0px #fff, 2px 2px 0px 2px #000;
+            padding: 4px 8px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #000;
+        }
     </style>
 </head>
 <body>
-    <div class="window">
-        <div class="title-bar">Connect</div>
-        <div class="content">
-            <a href="https://www.google.com" class="connect-button">CONNECT</a>
-        </div>
+    <!-- Folders -->
+    <div class="folder" id="folder1" style="top: 100px; left: 100px;">
+        <img src="icons/Documents_Folder.ico" alt="Folder Icon">
+        <span>Documents</span>
+    </div>
+    <div class="folder" id="folder2" style="top: 200px; left: 300px;">
+        <img src="icons/Books_folder.ico" alt="Folder Icon">
+        <span>Pictures</span>
+    </div>
+    <div class="folder" id="folder3" style="top: 300px; left: 400px;">
+        <img src="icons/Controls_Folder.ico" alt="Folder Icon">
+        <span>Pictures</span>
+    </div>
+    <div class="folder" id="folder4" style="top: 400px; left: 550px;">
+        <img src="icons/Printers_folder.ico" alt="Folder Icon">
+        <span>Pictures</span>
+    </div>
+    <div class="folder" id="folder4" style="top: 500px; left: 400px;">
+        <img src="icons/Web_documents_folder.ico" alt="Folder Icon">
+        <span>Pictures</span>
+    </div>
+
+    <!-- Recycle Bin -->
+    <div class="recycle-bin">
+        <img src="icons/Recycle_Bin.ico" alt="Recycle Bin Icon">
+        <span>Recycle Bin</span>
     </div>
 
     <!-- Taskbar -->
@@ -147,23 +184,66 @@
 
         <!-- Start Menu -->
         <div class="start-menu" id="startMenu">
-            <div class="start-menu-item" onclick="alert('FiveM clicked')">FiveM</div>
-            <div class="start-menu-item" onclick="alert('Discord clicked')">Discord</div>
-            <div class="start-menu-item" onclick="alert('Twitch clicked')">Twitch</div>
+            <div class="start-menu-item" onclick="alert('App1 clicked')">App1</div>
+            <div class="start-menu-item" onclick="alert('App2 clicked')">App2</div>
+            <div class="start-menu-item" onclick="alert('App3 clicked')">App3</div>
         </div>
 
         <!-- Discord Button -->
-        <a href="https://www.discord.com" class="taskbar-item">
-            <img src="https://upload.wikimedia.org/wikipedia/fr/9/98/Discord_logo.svg" alt="Discord Icon">
+        <a href="https://www.google.com" class="taskbar-item">
+            <img src="icons/Discord_logo.svg" alt="Discord Icon">
         </a>
 
         <!-- Twitch Button -->
-        <a href="https://www.twitch.tv" class="taskbar-item">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Twitch_logo.svg" alt="Twitch Icon">
+        <a href="https://www.google.com" class="taskbar-item">
+            <img src="icons/Twitch_logo.svg" alt="Twitch Icon">
         </a>
+
+        <!-- Digital Clock -->
+        <div class="clock" id="clock">Loading...</div>
     </div>
 
     <script>
+        // Drag and Drop Functionality
+        const folders = document.querySelectorAll('.folder');
+        const recycleBin = document.querySelector('.recycle-bin');
+
+        folders.forEach(folder => {
+            let isDragging = false;
+            let offsetX, offsetY;
+
+            folder.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                offsetX = e.clientX - folder.getBoundingClientRect().left;
+                offsetY = e.clientY - folder.getBoundingClientRect().top;
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (isDragging) {
+                    folder.style.left = `${e.clientX - offsetX}px`;
+                    folder.style.top = `${e.clientY - offsetY}px`;
+                }
+            });
+
+            document.addEventListener('mouseup', () => {
+                isDragging = false;
+
+                // Check if folder is over the recycle bin
+                const folderRect = folder.getBoundingClientRect();
+                const binRect = recycleBin.getBoundingClientRect();
+
+                if (
+                    folderRect.left < binRect.right &&
+                    folderRect.right > binRect.left &&
+                    folderRect.top < binRect.bottom &&
+                    folderRect.bottom > binRect.top
+                ) {
+                    folder.remove(); // Delete the folder
+                }
+            });
+        });
+
+        // Start Menu Toggle
         function toggleStartMenu() {
             const startMenu = document.getElementById('startMenu');
             if (startMenu.style.display === 'block') {
@@ -181,6 +261,19 @@
                 startMenu.style.display = 'none';
             }
         });
+
+        // Digital Clock
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const date = now.toLocaleDateString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds} ${date}`;
+        }
+
+        setInterval(updateClock, 1000); // Update every second
+        updateClock(); // Initial call to display the clock immediately
     </script>
 </body>
 </html>
