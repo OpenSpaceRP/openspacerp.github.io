@@ -106,7 +106,7 @@ const users = [
 // Fetch stream status from your backend
 async function fetchStreamStatus(users) {
   try {
-    const response = await fetch(`http://35.226.96.233:8080/streams?users=${users.join(',')}`);
+    const response = await fetch(`https://slarthub.duckdns.org/streams?users=${users.join(',')}`);
     const data = await response.json();
     return data;
   } catch (error) {
