@@ -130,7 +130,9 @@ function displayStreamStatus(users, streams) {
         <p class="online">Online</p>
         <p>${stream.title}</p>
         <p>Viewers: ${stream.viewer_count}</p>
+        <a href="https://www.twitch.tv/${stream.user_name}" target="_blank">
         <img src="${stream.thumbnail_url.replace('{width}', '300').replace('{height}', '200')}" alt="${stream.user_name}">
+        </a>
       `;
     } else {
       streamCard.innerHTML = `
